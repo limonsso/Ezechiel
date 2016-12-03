@@ -8,10 +8,13 @@
  * Controller of the interTechApp
  */
 angular.module('interTechApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .run(['$anchorScroll', function($anchorScroll) {
+        $anchorScroll.yOffset = 50; // always scroll by 50 extra pixels
+    }])
+    .controller('MainCtrl', function() {
+        this.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
+    });
