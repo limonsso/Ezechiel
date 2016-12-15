@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Welcome to the home page</h2>
+
+    <p>Please click on an element</p>
+
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 previewService" ng-repeat="record in records">
+            <div class="preview">
+                <div class="previewHead">
+                    <a href="cerulean/"><img src="{{ record.img_scr }}" class="img-responsive" alt="{{ record.title }}"></a>
+                </div>
+                <div class="previewBody">
+                    <h3>{{ record.title }}</h3>
+
+                    <p>{{ record.content }}</p>
+
+                </div>
+                <div class="previewFooter">
+                    <div class="btn-group"><a class="btn btn-danger" href="cerulean/">Plus d'info</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+</div>
+
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

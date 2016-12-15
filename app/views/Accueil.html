@@ -1,0 +1,104 @@
+<style>
+    .cb-slideshow,
+    .cb-slideshow:after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 0;
+        margin-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    .cb-slideshow li {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: none;
+    }
+
+    .cb-slideshow li:nth-child(1) {
+        background-image: url(../images/2.jpg)
+    }
+
+    .cb-slideshow li:nth-child(2) {
+        background-image: url(../images/3.jpg)
+    }
+
+    .cb-slideshow li:nth-child(3) {
+        background-image: url(../images/4.jpg)
+    }
+
+    .mySlides {
+        transition: opacity 1s ease-in;
+        opacity: 0;
+    }
+
+    .mySlidesAnimIn {
+        opacity: 1;
+    }
+
+    .mySlidesAnimout {
+        transition: opacity 1s ease-out;
+        opacity: 0;
+    }
+</style>
+
+
+<ul class="cb-slideshow">
+    <li class="mySlides" ng-repeat="SlideItem in
+        [
+        {
+            key:1,
+            title:'',
+            preview:''
+        },
+         {
+            key:2,
+            title:'',
+            preview:''
+        },
+         {
+            key:3,
+            title:'',
+            preview:''
+        }
+        ]">
+        <div><h3>{{SlideItem.title}}</h3>
+
+            <p>{{SlideItem.preview}}</p></div>
+    </li>
+</ul>
+
+<script>
+    var myIndex = 0;
+    var ArraySlide = new Array();
+    function JCarousel() {
+        var i = 0;
+        if (ArraySlide.length > 0) {
+            ArraySlide[myIndex - 1].addClass("mySlidesAnimout");
+            ArraySlide[myIndex-1].removeClass("mySlidesAnimIn");
+        } else {
+            $(".mySlides").each(function () {
+                ArraySlide[i] = $(this);
+                //$( this ).css("display","none");
+                i++;
+            });
+        }
+        myIndex++;
+        if (myIndex > ArraySlide.length) {
+            myIndex = 1;
+        }
+        ArraySlide[myIndex - 1].addClass("mySlidesAnimIn");
+        ArraySlide[myIndex-1].removeClass("mySlidesAnimout");
+        setTimeout(JCarousel, 8000); // Change image every 2 seconds
+    }
+
+
+    jQuery(JCarousel);
+</script>
