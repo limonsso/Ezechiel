@@ -17,6 +17,7 @@
         height: 100%;
         top: 0px;
         left: 0px;
+        list-style: none;
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: none;
@@ -35,7 +36,7 @@
     }
 
     .mySlides {
-        transition: opacity 1s ease-in;
+        transition: opacity 1.3s ease-in;
         opacity: 0;
     }
 
@@ -44,32 +45,34 @@
     }
 
     .mySlidesAnimout {
-        transition: opacity 1s ease-out;
+        transition: opacity 1.3s ease-out;
         opacity: 0;
     }
+
+    .mini-info {
+        position: relative;
+        top: 350px;
+        left: 20px;
+        padding: 0px;
+        width: 400px;
+        background-color: rgba(254, 254, 254, 0.76);
+    }
+
+    .mini-info > h3 {
+        padding: 10px;
+        font-weight: bold;
+        margin-top: -4px;
+        background-color: #ee582c;
+        color: #fefefe;
+    }
+
+    .mini-info > p {
+        padding: 10px;
+    }
 </style>
-
-
 <ul class="cb-slideshow">
-    <li class="mySlides" ng-repeat="SlideItem in
-        [
-        {
-            key:1,
-            title:'',
-            preview:''
-        },
-         {
-            key:2,
-            title:'',
-            preview:''
-        },
-         {
-            key:3,
-            title:'',
-            preview:''
-        }
-        ]">
-        <div><h3>{{SlideItem.title}}</h3>
+    <li class="mySlides" ng-repeat="SlideItem in recordAccueil">
+        <div class="mini-info"><h3>{{SlideItem.title}}</h3>
 
             <p>{{SlideItem.preview}}</p></div>
     </li>
@@ -81,8 +84,10 @@
     function JCarousel() {
         var i = 0;
         if (ArraySlide.length > 0) {
+            ArraySlide[myIndex - 1].children(".mini-info").removeClass("slideRight");
             ArraySlide[myIndex - 1].addClass("mySlidesAnimout");
             ArraySlide[myIndex-1].removeClass("mySlidesAnimIn");
+
         } else {
             $(".mySlides").each(function () {
                 ArraySlide[i] = $(this);
@@ -96,9 +101,9 @@
         }
         ArraySlide[myIndex - 1].addClass("mySlidesAnimIn");
         ArraySlide[myIndex-1].removeClass("mySlidesAnimout");
+        ArraySlide[myIndex - 1].children(".mini-info").addClass("slideRight");
         setTimeout(JCarousel, 8000); // Change image every 2 seconds
     }
-
 
     jQuery(JCarousel);
 </script>

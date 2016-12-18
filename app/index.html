@@ -2,8 +2,8 @@
 <html ng-app="interTechApp">
 
 <head>
-    <meta charset="utf-8">
     <title></title>
+    <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -14,7 +14,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/backgroundSlide_style.css">
+    <link rel="stylesheet" href="styles/CssAnimation.css">
     <!-- endbuild -->
 </head>
 
@@ -39,7 +39,7 @@
                 </div>
                 <div class="menu navbar-collapse collapse in" id="navbar-main" aria-expanded="true">
                     <ul class="nav navbar-nav navbar-right">
-                        <li ng-repeat="(value,key) in {'Accueil':1,'Nos service':2,'Nous joindre':3}">
+                        <li ng-repeat="(value,key) in {'Accueil':1,'Présentation':4,'Nos service':2,'Nous joindre':3}">
                             <a href="#fbsection{{key}}" du-smooth-scroll du-scrollspy>{{ value }}</a>
                         </li>
                     </ul>
@@ -52,6 +52,9 @@
     <div class="_container">
         <div id="cbp-fbscroller" class="cbp-fbscroller">
             <section id="fbsection1" ng-controller="homeCtl">
+                <div ng-include="template.url"></div>
+            </section>
+            <section id="fbsection4" ng-controller="nosServicesCtl">
                 <div ng-include="template.url"></div>
             </section>
             <section id="fbsection2" ng-controller="nosServicesCtl">
@@ -90,6 +93,7 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -98,8 +102,8 @@
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/controllers/contactUsController.js"></script>
 <script src="scripts/controllers/nosServicesController.js"></script>
-<script src="scripts/controllers/homeController.js"></script>
-<script src="scripts/controllers/contactUsController.js"></script>
+<script type="text/javascript" src="scripts/controllers/homeController.js" charset="UTF-8"></script>
+<!--<script src="scripts/controllers/contactUsController.js"></script>-->
 <!-- endbuild -->
 </body>
 

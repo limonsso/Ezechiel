@@ -12,7 +12,8 @@ angular
     .module('interTechApp', [
         'ngAnimate',
         'ngResource',
-        'ngRoute'
+        'ngRoute',
+        'sanitize'
     ])
     .config(function($routeProvider) {
         $routeProvider
