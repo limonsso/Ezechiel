@@ -10,6 +10,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -39,7 +40,7 @@
                 </div>
                 <div class="menu navbar-collapse collapse in" id="navbar-main" aria-expanded="true">
                     <ul class="nav navbar-nav navbar-right">
-                        <li ng-repeat="(value,key) in {'Accueil':1,'Présentation':4,'Nos service':2,'Nous joindre':3}">
+                        <li ng-repeat="(value,key) in {'Accueil':1,'Qui sommes nous?':4,'Nos service':2,'Nous joindre':3}">
                             <a href="#fbsection{{key}}" du-smooth-scroll du-scrollspy>{{ value }}</a>
                         </li>
                     </ul>
@@ -54,7 +55,7 @@
             <section id="fbsection1" ng-controller="homeCtl">
                 <div ng-include="template.url"></div>
             </section>
-            <section id="fbsection4" ng-controller="nosServicesCtl">
+            <section id="fbsection4" ng-controller="QuiSommesNousCtl">
                 <div ng-include="template.url"></div>
             </section>
             <section id="fbsection2" ng-controller="nosServicesCtl">
@@ -94,6 +95,9 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-scroll/angular-scroll.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -103,6 +107,7 @@
 <script src="scripts/controllers/contactUsController.js"></script>
 <script src="scripts/controllers/nosServicesController.js"></script>
 <script type="text/javascript" src="scripts/controllers/homeController.js" charset="UTF-8"></script>
+<script type="text/javascript" src="scripts/controllers/QSNController.js" charset="UTF-8"></script>
 <!--<script src="scripts/controllers/contactUsController.js"></script>-->
 <!-- endbuild -->
 </body>

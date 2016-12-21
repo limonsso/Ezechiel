@@ -1,11 +1,27 @@
-html {
-    height: 100%;
+@font-face {
+    font-family: EASPORTS15;
+    src: url(font/EASPORTS15.ttf);
 }
 
+@font-face {
+    font-family: RaungRivs;
+    src: url(font/RaungRivs.ttf);
+}
+
+@font-face {
+    font-family: EraseITCB;
+    src: url(font/EraseITC.ttf)
+}
+
+@font-face {
+    font-family: EraseITCM;
+    src: url(font/EraseITCMedium.ttf)
+}
 body {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    font-family: EraseITCM;
 }
 
 ._container,
@@ -59,7 +75,7 @@ body {
 .logo {
     width: 250px;
     min-height: 90px;
-    background: url("../images/LogoIntertch-inverse.png") no-repeat;
+    background: url("../images/LogoIntertech-inverse.png") no-repeat;
     -webkit-background-size: 50%;
     /* Generic*/
     -moz-background-size: 50%;
@@ -260,7 +276,7 @@ body {
     background-color: rgba(254, 254, 254, 0.76);
 }
 
-.mini-info > h3 {
+.mini-info > h4 {
     padding: 10px;
     font-weight: bold;
     margin-top: -4px;
@@ -270,6 +286,15 @@ body {
 
 .mini-info > p {
     padding: 10px;
+}
+
+.titlePage {
+    border-bottom: solid 2px #ee582c;
+}
+
+.titlePage h2 {
+    font-weight: bold;
+    color: #ee582c;
 }
 
 /*** Fin CssSlide *****/
