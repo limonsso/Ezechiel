@@ -27,6 +27,6 @@ angular.module('interTechApp')
             }
         ]
     }])
-    .controller('homeCtl', ['$scope', '$sce', function ($scope, $sce) {
+    .controller('homeCtl' , ['$scope' , function ($scope) {
         $scope.template ={ name: 'Accueil', url: 'views/Accueil.html'}
     }]);

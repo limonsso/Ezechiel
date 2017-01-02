@@ -8,6 +8,6 @@
  * Controller of the interTechApp
  */
 angular.module('interTechApp', ['duScroll'])
-    .controller('MainController', ['$anchorScroll', '$location', '$scope', '$document', function($anchorScroll, $location, $scope, $document) {
+    .controller('MainController' , [function () {
         //
-    }]).value('duScrollOffset', 80);
+    }]).value('duScrollOffset' , 75);
